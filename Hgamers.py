@@ -16,10 +16,13 @@ def human(x,y):
 while running == True:
     if event.type == pygame.quit():
         running = False
+<<<<<<< HEAD
+=======
 while running == true:
-    for event in pygame.event.get()
+    for event in pygame.event.get():
         if event.type == pygame.quit():
-            running = false:
+            running = False
+>>>>>>> 8917182ff47b0ed33802f6bf3df1162f1e5050cc
 quit()
 pygame.quit()
 >>>>>>> bbac26c65e0e97ba77d76d1c19b7af5bcf7dc172
