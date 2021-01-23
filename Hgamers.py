@@ -12,8 +12,9 @@ human_width = 100
 running = True
 def human(x,y):
     game.Display.blit(img, (x, y))
-while running == true:
+while running == True:
     if event.type == pygame.quit():
-        running = false:
+        running = False
+
 quit()
 pygame.quit()
