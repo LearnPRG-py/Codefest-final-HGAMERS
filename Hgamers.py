@@ -15,9 +15,5 @@ def human(x,y):
 while running == True:
     if event.type == pygame.quit():
         running = False
-while running == true:
-    for event in pygame.event.get():
-        if event.type == pygame.quit():
-            running = false:
 quit()
 pygame.quit()
