@@ -7,6 +7,8 @@ ts = 0.1
 human_width = 100
 
 hit = False
+target = 15
+win = False
 
 display_width = 800
 display_height = 600
@@ -32,24 +34,18 @@ hp = 4
 
 def addhealth():
    l = len(hblist)
+
    if l%2 == 0:
        hblist.append(pygame.draw.rect(screen, (0,255,0), pygame.Rect(775, 100 + 10*l, 10, 10)))
    else:
        hblist.append(pygame.draw.rect(screen, (0,128,0), pygame.Rect(775, 100 + 10*l, 10, 10)))
    pygame.display.update()
 
-#for i in range(hp):
-#   addhealth()
-#   pygame.display.update()
-#   time.sleep(ts)
-
 def deletehealth():
    screen.fill((0,0,0),(775, 100, 10, 300))
    j = len(hblist)
-   print(j)
    del hblist[j-1]
-#   time.sleep(1)
-   
+
    for m in range(j-1):
         if m%2 == 0:
             pygame.draw.rect(screen, (0,255,0), pygame.Rect(775, 100 + 10*m, 10, 10))
@@ -79,7 +75,6 @@ def human(x,y):
     screen.blit(img, (x, y))
 
 for h in range(hp):
-#    print("enter addhealth")
     addhealth()
 
 pygame.display.update()
@@ -106,7 +101,7 @@ while running == True:
 
 
     if corona_starty > display_height:
-        added = 0
+        to_add = 0
         corona_startx = random.randrange(0, display_width)
         corona_starty = -600
         if corona_speed < 6:
@@ -123,48 +118,36 @@ while running == True:
     if humanx < 648 and x_change == 3:
         humanx += 3
 
-    print("coronax = ",corona_startx)
-    print("coronay = ",corona_starty)
-    print("humanx = ",humanx)
-    print("humany = ",humany)
-    
-#    time.sleep(5)
-
     human(humanx, humany)
     if humany < corona_starty+corona_height:
-        print("y crossover")
-        if (humanx > corona_startx and humanx <corona_startx + corona_width) or (humanx+human_width > corona_startx and humanx + human_width < corona_startx+corona_width):
-            print("x crossover")
+        if (humanx > corona_startx and humanx <corona_startx + corona_width) or (humanx+human_width > corona_startx and humanx < corona_startx+corona_width):
             hit = True
             corona_starty = 650
-            print("y reset = ",corona_starty)
-
-#    time.sleep(2)
-
 
     if hit:
-        print("in hit")
-        print("len ",len(hblist))
         if len(hblist)>2:
-            for d in range(2):
+            for d in range(3):
                deletehealth()
-#            pygame.display.update()
             hit = False
         else:
             screen.fill((0,0,0),(775, 100, 10, 300))
-            print("in else")
             running = False
     else:
-        print("in not hit")
-        if (len(hblist)<6 and added==0):
-           print("add hp")
+        if (len(hblist)<target and to_add==0):
            addhealth()
-           added = 1
-         
+           to_add = 1
 
+    if len(hblist) == 15:
+       running = False
+       win = True
+         
     pygame.display.update()
     clock.tick(120)
 
-print("Sorry you are infected with COVID; please take 14 days rest")
+if win == True:
+   print("Well Done! You have taken necessary safety precautions against COVID and beaten the virus.\n","You can now take the vaccine.")
+else:
+   print("Sorry you are infected with COVID; please take 14 days rest & get well soon")
+
 quit()
 pygame.quit()
