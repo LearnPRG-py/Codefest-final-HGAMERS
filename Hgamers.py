@@ -15,5 +15,12 @@ def human(x,y):
 while running == True:
     if event.type == pygame.quit():
         running = False
+<<<<<<< Updated upstream
+=======
+while running == true:
+    for event in pygame.event.get():
+        if event.type == pygame.quit():
+            running = False
+>>>>>>> Stashed changes
 quit()
 pygame.quit()
