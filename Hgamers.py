@@ -11,5 +11,8 @@ pygame.display.set_caption('avoid covid')
 human_width = 100
 def human(x,y):
     game.Display.blit(img, (x, y))
-
-
+while running == true:
+    if event.type == pygame.quit():
+        running == false:
+quit()
+pygame.quit()
