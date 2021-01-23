@@ -10,8 +10,8 @@ running = True
 def human(x,y):
     game.Display.blit(img, (x, y))
 while running == True:
-    for event in pygame.event.get():
-        if event.type == pygame.quit():
-            running = False
+    for Event in pygame.event.get():
+      if Event.type == pygame.QUIT:
+         running = False
 quit()
 pygame.quit()
