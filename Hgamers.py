@@ -5,8 +5,7 @@ screen = pygame.display.set_mode((800,600))
 white = (255, 255, 255)
 black = (0, 0, 0)
 red = (255, 0, 0)
-img = pygame.image.open("human.png")
-gameDisplay = pygame.display.set_mode((display))
+img = pygame.image.load("human.png")
 running = True
 def human(x,y):
     game.Display.blit(img, (x, y))
