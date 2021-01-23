@@ -7,3 +7,9 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 pygame.display.set_caption('avoid covid')
 human_width = 100
+
+while running == true:
+    if event.type == pygame.quit():
+        running == false:
+quit()
+pygame.quit()
