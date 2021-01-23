@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 import pygame
 import random
 import time
@@ -15,9 +14,8 @@ running = True
 def human(x,y):
     game.Display.blit(img, (x, y))
 while running == True:
-    for event in pygame.event.get()
+    for event in pygame.event.get():
         if event.type == pygame.quit():
             running = False
 quit()
 pygame.quit()
->>>>>>> parent of 6f0c60f... Merge branch 'main' of https://github.com/LearnPRG-py/Codefest-final-HGAMERS into main
