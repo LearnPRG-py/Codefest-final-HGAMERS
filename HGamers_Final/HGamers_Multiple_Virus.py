@@ -2,15 +2,15 @@ import random
 import time
 import pygame
 
-print('Hello! Welcome to Avoid COVID by the Hgamers!')
+print('Hello! Welcome to Avoid COVID by the HGamers!')
 #time.sleep(5)
-print('In this game, you must avoid COVID by using the WASD keys. If covid hits you, lose 2 health. Every single wave you survive, you get 1 extra health. If you survive x waves, you will survive COVID, and you win the game.')
+print('In this game, you must avoid COVID by using the Arrow keys.\n' 'If covid hits you, lose 2 health. Every single wave you survive, you get 1 extra health.\n', 'If you survive 7(by default) waves, you will survive COVID, and you win the game.')
 #time.sleep(10)
 print('On a more serious note, here are some quick facts about COVID.')
 fact1 = ('COVID-19 is a type of coronavirus, a deadly lung disease')
 fact2 = ('The most simple and most effective way to avoid COVID-19 in real life is wearing masks and using safety gloves in unsanitary areas')
-fact3 = ('Hand sanitizers are very helpful during this time, giving a quick way to make sure your hands are clean. Alternativley, washing your hands for 20 seconds is effective.')
-fact4 = ('Symptoms of COVID-19 are as follows- Chills, coughing, sneezing, breathing issues, faigue and headaches.')
+fact3 = ('Hand sanitizers are very helpful during this time, giving a quick way to make sure your hands are clean.\n' 'Alternativley, washing your hands for 20 seconds is effective.')
+fact4 = ('Symptoms of COVID-19 are as follows- chills, coughing, sneezing, breathing issues, fatigue and headaches.')
 #time.sleep(5)
 print(fact1)
 #time.sleep(5)
@@ -25,11 +25,12 @@ pygame.init()
 screen = pygame.display.set_mode((800,600))
 img = pygame.image.load("testimg.png")
 cimg1 = pygame.image.load("cvd.png")
+scr = pygame.image.load("scr_final.png")
 
 humany = 500
 humanx = random.randint(100, 600)
 
-target = 7
+target = 5
 sleeptime = 0.2
 
 
@@ -175,6 +176,7 @@ def covid(x_human,y_human):
         else:
             addhealth()
             countsuccess = countsuccess+1
+            print("Success Achieved = ",countsuccess)
             if countsuccess > target:
                 win = True
                 running = False
@@ -183,6 +185,10 @@ def covid(x_human,y_human):
         print("Sorry you are infected with COVID; please take 14 days rest & get well soon")
     elif win == True:
         print("Well Done! You have taken necessary safety precautions against COVID and beaten the virus.\n","You can now take the vaccine.")
+        screen.fill((0,0,0))
+        screen.blit(scr, (50,75))
+        pygame.display.update()
+        time.sleep(5)
 
     pygame.quit()
     quit()
