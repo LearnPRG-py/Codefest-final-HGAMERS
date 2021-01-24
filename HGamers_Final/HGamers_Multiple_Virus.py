@@ -30,7 +30,7 @@ scr = pygame.image.load("scr_final.png")
 humany = 500
 humanx = random.randint(100, 600)
 
-target = 5
+target = 6
 sleeptime = 0.2
 
 
@@ -188,7 +188,7 @@ def covid(x_human,y_human):
         screen.fill((0,0,0))
         screen.blit(scr, (50,75))
         pygame.display.update()
-        time.sleep(5)
+        time.sleep(10)
 
     pygame.quit()
     quit()
