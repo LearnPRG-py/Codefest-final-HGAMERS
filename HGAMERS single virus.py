@@ -2,6 +2,25 @@ import pygame
 import random
 import time
 
+print('Hello! Welcome to Avoid COVID by the Hgamers!')
+time.sleep(5)
+print('In this game, you must avoid COVID by using the WASD keys. If covid hits you, lose 2 health. Every single wave you survive, you get 1 extra health. If you survive x waves, you will survive COVID, and you win the game.')
+time.sleep(10)
+print('On a more serious note, here are some quick facts about COVID.')
+fact1 = ('COVID-19 is a type of coronavirus, a deadly lung disease')
+fact2 = ('The most simple and most effective way to avoid COVID-19 in real life is wearing masks and using safety gloves in unsanitary areas')
+fact3 = ('Hand sanitizers are very helpful during this time, giving a quick way to make sure your hands are clean. Alternativley, washing your hands for 20 seconds is effective.')
+fact4 = ('Symptoms of COVID-19 are as follows- Chills, coughing, sneezing, breathing issues, faigue and headaches.')
+time.sleep(5)
+print(fact1)
+time.sleep(5)
+print(fact2)
+time.sleep(10)
+print(fact3)
+time.sleep(10)
+print(fact4)
+time.sleep(10)
+
 humany = 500
 ts = 0.1
 human_width = 100
